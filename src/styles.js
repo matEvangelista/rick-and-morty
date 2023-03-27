@@ -45,7 +45,7 @@ export const HeaderStyled = styled.div`
         padding: 10px;
         border-radius: 10px;
         border: none;
-        min-width: 200px;
+        min-width: 14rem;
         font-size: .8rem;
         background-color: lightgreen;
         ::placeholder {
