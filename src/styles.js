@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const HeaderStyled = styled.div`
     background-color: darkgreen;
     width: 100%;
-    position: fixed;
-    top: 0;
     .options-container {
         display: flex;
         gap: 1rem;
@@ -110,7 +108,6 @@ export const Everything = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding-top: 3rem;
     img {
         width: 100%;
         max-width: 700px;
@@ -122,7 +119,6 @@ export const CardContainer = styled.section`
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     padding: 2rem 0;
-    margin-top: 1rem;
     min-height: 100vh;
     width: 95%;
     @media screen and (max-width: 1200px) {
