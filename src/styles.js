@@ -3,13 +3,39 @@ import styled from "styled-components";
 export const HeaderStyled = styled.div`
     background-color: darkgreen;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    img {
+        width: 10rem;
+    }
+    .logo-button-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    button {
+        height: 2rem;
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: inherit;
+        border: none;
+        .button-line {
+            width: 2rem;
+            height: .2rem;
+            border-radius: 10px;
+            background-color: white;
+        }
+    }
     .options-container {
         display: flex;
         gap: 1rem;
         width: 80%;
         max-width: 1200px;
         margin: 0 auto;
-        flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         color: white;
@@ -19,6 +45,8 @@ export const HeaderStyled = styled.div`
         padding: 10px;
         border-radius: 10px;
         border: none;
+        min-width: 200px;
+        font-size: .8rem;
         background-color: lightgreen;
         ::placeholder {
             color: darkgreen;
@@ -32,14 +60,44 @@ export const HeaderStyled = styled.div`
     .options {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        width: max-content;
     }
 
     select {
+        margin-left: 1rem;
+        font-size: .8rem;
         padding: 10px;
         border-radius: 10px;
         background-color: lightgreen;
         option {
             margin: 10px;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .logo-button-container {
+            width: 90%;
+            align-self: center;
+        }
+        button {
+            display: flex;
+            div:nth-child(1) {
+                transform-origin: top left;
+                transform: ${props=> props.clicked ? "rotate(45deg)" : "none"};
+            }
+            div:nth-child(2) {
+                opacity: ${props=> props.clicked ? 0 : 1};
+            }
+            div:nth-child(3) {
+                transform-origin: bottom left;
+                transform: ${props=> props.clicked ? "rotate(-45deg)" : "none"};
+            }
+        }
+        flex-direction: column;
+        .options-container {
+            display: ${props => props.clicked ? "flex" : "none"};
+            flex-direction: column;
         }
     }
 `;
@@ -87,7 +145,10 @@ export const CardItSelf = styled.div`
     padding: 1rem;
     text-align: center;
     h2:first-child {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1rem;
     }
     .gender {
         color: ${(props) => colorGender(props.gender)};
@@ -103,24 +164,26 @@ export const CardItSelf = styled.div`
 `;
 
 export const Everything = styled.section`
-    background-color: rgb(12, 55, 19);
+    background-color: rgb(23, 12, 55);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     img {
         width: 100%;
-        max-width: 700px;
+        max-width: 300px;
     }
 `;
 
 export const CardContainer = styled.section`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    margin-top: 4rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
     padding: 2rem 0;
     min-height: 100vh;
     width: 95%;
+    max-width: 1200px;
     @media screen and (max-width: 1200px) {
         grid-template-columns: repeat(2, 1fr);
     }

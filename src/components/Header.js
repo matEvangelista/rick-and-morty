@@ -5,13 +5,25 @@ export default function Header({ onQuery }) {
     const [gender, setGender] = useState("everything");
     const [status, setStatus] = useState("everything");
     const [text, setText] = useState("");
+    const [clicked, setClicked] = useState(false);
 
     useEffect(() => {
         onQuery({ gender, status, text });
     }, [gender, status, text]);
 
     return (
-        <HeaderStyled>
+        <HeaderStyled clicked={clicked}>
+            <div className="logo-button-container">
+                <img
+                    src="https://1000logos.net/wp-content/uploads/2022/03/Rick-and-Morty.png"
+                    alt="rick and morty logo"
+                />
+                <button onClick={() => setClicked(!clicked)}>
+                    <div className="button-line"></div>
+                    <div className="button-line"></div>
+                    <div className="button-line"></div>
+                </button>
+            </div>
             <div className="options-container">
                 <div className="options">
                     <input
