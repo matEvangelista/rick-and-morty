@@ -34,7 +34,7 @@ export default function Header({ onQuery }) {
                         <option value="everything">Everything</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
-                        <option value="Unknown">Unknown</option>
+                        <option value="unknown">Unknown</option>
                         <option value="Genderless">Genderless</option>
                     </select>
                 </div>
@@ -50,7 +50,7 @@ export default function Header({ onQuery }) {
                         <option value="everything">Everything</option>
                         <option value="Dead">Dead</option>
                         <option value="Alive">Alive</option>
-                        <option value="Unknown">Unknown</option>
+                        <option value="unknown">Unknown</option>
                     </select>
                 </div>
             </div>
